@@ -1,4 +1,4 @@
-from sheets_browser import load_sheets, get_sheets_name, load_page
+from sheets_browser import load_sheets, load_page
 from images_to_pdf import create_pdf_from_images
 import os
 
