@@ -4,10 +4,7 @@ import os
 
 
 raw_dir = "SHEETS RAW"
-pdf_dir = "PDF"
-
-
-os.makedirs(pdf_dir, exist_ok=True)
+pdf_dir = None
 
 
 def clear_folder(folder_path):
@@ -25,10 +22,19 @@ def clear_folder(folder_path):
     print("finished!")
 
 
+def set_save_dir(dir):
+    global pdf_dir
+    pdf_dir = dir
 
-def load_pdf_score(url):
+
+def save_score(url):
 
     os.makedirs(raw_dir, exist_ok=True)
+    
+    if pdf_dir:
+        os.makedirs(pdf_dir, exist_ok=True)
+    else:
+        raise Exception("PDF save directory is not defined! Use 'set_save_dir(dir)' before.")
 
     # Открываем страницу
     sheets_name = load_page(url)
@@ -36,6 +42,7 @@ def load_pdf_score(url):
     if (sheets_name == None):   # Если всё плохо, то ничего не делаем
         return None
 
+    # Проверяем, может мы уже качали такие ноты
     if os.path.exists(os.path.join(pdf_dir, sheets_name + ".pdf")):
         return os.path.join(pdf_dir, sheets_name + ".pdf")
 
@@ -52,8 +59,10 @@ def load_pdf_score(url):
 
 
 if __name__ == "__main__":
+    set_save_dir("PDF")
+
     url = input("Enter URL to score from MusicScore: ")
-    path = load_pdf_score(url)
+    path = save_score(url)
     
     if path != None:
         print(f"> Saved to '{path}'")
