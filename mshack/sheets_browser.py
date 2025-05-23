@@ -6,7 +6,7 @@ import requests
 import os, re
 from time import sleep
 
-from .config import CHROME_OPTIONS, URL_PATTERN, PAGE_LOAD_TIMEOUT
+from config import CHROME_OPTIONS, URL_PATTERN, PAGE_LOAD_TIMEOUT
 
 
 chrome_options = Options()

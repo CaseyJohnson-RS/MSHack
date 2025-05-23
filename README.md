@@ -19,4 +19,6 @@ if path_to_score:
     pass
 ```
 
-Be prepared to wait a long time (~1.5 minutes)
+Be prepared to wait a long time (~1.5 minutes). Yeah... I don't know how to download sheets faster. Not yet.
+
+
