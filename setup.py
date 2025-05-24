@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='mshack',
-    version='0.1.0',
+    version='0.1.1',
     description='Export music score sheets to PDF',
     author='Casey Johnson',
     author_email='sharus.programmer@gmail.com',
