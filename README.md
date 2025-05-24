@@ -1,3 +1,3 @@
-# MSHack Serice Backend
+# MSHack App
 
-This repository implements the mshack package and provides an API for retrieving PDF. 
+This repository implements the mshack package and provides app.
